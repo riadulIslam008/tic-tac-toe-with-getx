@@ -17,8 +17,7 @@ samples, guidance on mobile development, and a full API reference.
 
 
 
-app ui -- <img src="https://user-images.githubusercontent.com/73518920/131622715-5c3b9f79-6869-4b4d-bb0d-632460a044e8.jpg" height= "500" width ="300">
+ <img src="https://user-images.githubusercontent.com/73518920/132406584-a840c386-176e-433d-9a94-def8cd136683.gif" height= "500" width ="300">
 
-winning message -- <img src="https://user-images.githubusercontent.com/73518920/131623569-a5e47ab7-e834-496d-a7bd-1176664d6a2f.jpg" height= "500" width ="300">
 
 
