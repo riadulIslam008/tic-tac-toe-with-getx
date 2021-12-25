@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tic_tac_toe/Core/Veriable.dart';
 
 void winningMessage(item, VoidCallback startNewGame) {
   var winningPlayer = item == "O" ? "One" : "Two";

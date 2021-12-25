@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tic_tac_toe/View/Play_With_Computer/Ai_View_Controller.dart';
-import 'package:tic_tac_toe/View/Play_With_Computer/Widgets/Ai_Box.dart';
 import 'package:tic_tac_toe/View/Widgets/Box_Container.dart';
 
 class AiGameBoard extends StatelessWidget {
