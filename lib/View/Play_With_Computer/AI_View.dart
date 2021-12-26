@@ -13,7 +13,7 @@ class AiView extends GetWidget<AiViewController> {
         appBar: AppBar(
           title: Text("Play with Computer"),
           actions: [
-            resetButton(() => controller.claerAll()),
+            resetButton(() => controller.clearAll()),
           ],
         ),
         body: Center(

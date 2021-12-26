@@ -5,6 +5,12 @@ import 'package:tic_tac_toe/Use_Cases/Check_Wining_Index.dart';
 import 'package:tic_tac_toe/Use_Cases/Winnning_Dialog.dart';
 
 class GameController extends GetxController {
+  @override
+  void onInit() {
+    clearAllValue();
+    super.onInit();
+  }
+
   Timer? timerOne;
   RxBool playerController = true.obs;
   RxBool playerChange = true.obs;
@@ -34,7 +40,7 @@ class GameController extends GetxController {
 
   clearAllValue() {
     for (var i = 0; i < itemList.length; i++) {
-      itemList[i] = null;
+      if (itemList[i] != null) itemList[i] = null;
     }
   }
 
@@ -73,5 +79,12 @@ class GameController extends GetxController {
   void winningDialog(item) {
     winningMessage(item, () => startOverNew());
     if (timerOne!.isActive) timerOne!.cancel();
+  }
+
+  @override
+  void dispose() {
+    timerOne!.cancel();
+    clearAllValue();
+    super.dispose();
   }
 }

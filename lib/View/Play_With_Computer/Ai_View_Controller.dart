@@ -5,14 +5,14 @@ import 'package:tic_tac_toe/Use_Cases/Check_Wining_Index.dart';
 import 'package:tic_tac_toe/Use_Cases/Winnning_Dialog.dart';
 
 class AiViewController extends GetxController {
-  claerAll() {
+  clearAll() {
     for (var i = 0; i < itemList.length; i++) {
       itemList[i] = null;
     }
     update();
   }
 
-  void winningDialog() {
+  void winningDialog(item) {
     aiWinningMessage(() => startOverNew());
   }
 
@@ -46,7 +46,13 @@ class AiViewController extends GetxController {
   }
 
   startOverNew() {
-    claerAll();
+    clearAll();
     Get.back();
+  }
+
+  @override
+  void onInit() {
+    clearAll();
+    super.onInit();
   }
 }
