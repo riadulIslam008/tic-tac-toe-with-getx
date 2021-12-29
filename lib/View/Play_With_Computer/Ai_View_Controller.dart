@@ -12,16 +12,22 @@ class AiViewController extends GetxController {
     update();
   }
 
-  void winningDialog(item) {
-    aiWinningMessage(() => startOverNew());
+  void winningDialog(String item) {
+    aiWinningMessage(() => startOverNew(), item);
   }
 
   void changeValue(int index) {
-    final controller = Get.find<AiViewController>();
     if (itemList[index] == null) {
       itemList[index] = HUMAN;
       update();
-      winningLogic(index, controller);
+      //Match Draw Dialog
+      int spot = 0;
+      for (int i = 0; i < itemList.length; i++) {
+        if (itemList[i] == null) spot++;
+      }
+      if (spot == 0) winningDialog("NONE");
+      String winnerName;
+
       int? bestMove;
 
       // Ai move
@@ -29,8 +35,7 @@ class AiViewController extends GetxController {
       for (int i = 0; i < itemList.length; i++) {
         if (itemList[i] == null) {
           itemList[i] = AI_MOVE;
-          final score = minimaxAlgo(false, itemList,  -9999999, 999999999);
-          
+          final score = minimaxAlgo(false, itemList, -9999999, 999999999);
 
           itemList[i] = null;
           if (score > bestScore) {
@@ -41,7 +46,9 @@ class AiViewController extends GetxController {
       }
       if (bestMove != null) itemList[bestMove] = AI_MOVE;
       update();
-      winningLogic(bestMove, controller);
+      winnerName = winningLogic(bestMove);
+      if (winnerName == AI_MOVE)
+        aiWinningMessage(() => startOverNew(), winnerName);
     }
   }
 

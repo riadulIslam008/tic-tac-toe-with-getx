@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tic_tac_toe/View/Play_With_Friend/GamesController.dart';
-import 'package:tic_tac_toe/View/Play_With_Friend/Widgets/Reset_Button.dart';
 import 'package:tic_tac_toe/View/Play_With_Friend/Widgets/Game_Board.dart';
 import 'package:tic_tac_toe/View/Play_With_Friend/Widgets/Player_name_And_Timer.dart';
 
@@ -27,8 +26,6 @@ class PlayWithFriendView extends GetWidget<GameController> {
               Column(
                 children: [
                   GameBoard(),
-                  SizedBox(height: 20),
-                 ResetButton(onPressed: ()=> controller.startOverNew())
                 ],
               ),
               Obx(

@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void winningMessage(item, VoidCallback startNewGame) {
-  var winningPlayer = item == "O" ? "One" : "Two";
+  var winningPlayer = item == "O"
+      ? "Player One"
+      : item == "NONE"
+          ? "Match Tie"
+          : "Player Two";
   Get.defaultDialog(
     title: " Congretulation 👏👏",
     titlePadding: const EdgeInsets.all(20),
-    middleText: "😎😎 Player $winningPlayer 😎😎",
+    middleText: "😎😎  $winningPlayer 😎😎",
     barrierDismissible: false,
     confirm: Row(
       children: [
@@ -25,12 +29,12 @@ void winningMessage(item, VoidCallback startNewGame) {
   );
 }
 
-void aiWinningMessage( VoidCallback startNewGame) {
- 
+void aiWinningMessage(VoidCallback startNewGame, String item) {
+  final bool _matchDraw = item == "NONE" ? true : false;
   Get.defaultDialog(
     title: " Opps! 😓",
     titlePadding: const EdgeInsets.all(20),
-    middleText: "You lost",
+    middleText: _matchDraw ? "🤔🤔 Match Tie 🤔🤔" : "You lost",
     barrierDismissible: false,
     confirm: Row(
       children: [

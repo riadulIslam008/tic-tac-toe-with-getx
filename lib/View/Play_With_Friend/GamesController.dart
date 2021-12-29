@@ -45,25 +45,42 @@ class GameController extends GetxController {
   }
 
   changeValue(index) {
-    final controller = Get.find<GameController>();
+    int spot = 0;
     if (timerOne != null) {
       timerOne!.cancel();
     }
     var zeroORcross = playerController.value ? "O" : "✖";
+    String winnerName = "None";
 
     if (itemList[index] == null) {
       itemList[index] = zeroORcross;
-      winningLogic(index, controller);
+      update();
+      winnerName = winningLogic(index);
+      if (winnerName == "O" || winnerName == "✖") winningDialog(winnerName);
+
+      // Match Draw or Not
+      if (winnerName == "NONE") {
+        for (int i = 0; i < itemList.length; i++) {
+          if (itemList[i] == null) spot++;
+        }
+        if (spot == 0) {
+          timerOne!.cancel();
+          winningDialog(winnerName);
+        }
+      }
     } else {
       return;
     }
-    playerController.value = !playerController.value;
-    playerChange.value = !playerChange.value;
-    timeDecrement();
-    playerController.value
-        ? playerTwoTimer.value = 5
-        : playerOneTimer.value = 5;
-    update();
+    //if spot == 0 that's mean match should continue play
+    if (spot != 0) {
+      playerController.value = !playerController.value;
+      playerChange.value = !playerChange.value;
+      timeDecrement();
+      playerController.value
+          ? playerTwoTimer.value = 5
+          : playerOneTimer.value = 5;
+      update();
+    }
   }
 
   startOverNew() {
@@ -77,8 +94,8 @@ class GameController extends GetxController {
   }
 
   void winningDialog(item) {
+    if (timerOne != null) timerOne!.cancel();
     winningMessage(item, () => startOverNew());
-    if (timerOne!.isActive) timerOne!.cancel();
   }
 
   @override
