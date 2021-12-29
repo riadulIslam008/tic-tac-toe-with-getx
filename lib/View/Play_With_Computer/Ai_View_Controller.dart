@@ -29,9 +29,9 @@ class AiViewController extends GetxController {
       for (int i = 0; i < itemList.length; i++) {
         if (itemList[i] == null) {
           itemList[i] = AI_MOVE;
-          final score = minimaxAlgo(false, itemList);
+          final score = minimaxAlgo(false, itemList,  -9999999, 999999999);
+          
 
-          print("index $i == Score $score");
           itemList[i] = null;
           if (score > bestScore) {
             bestScore = score;

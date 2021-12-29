@@ -6,7 +6,7 @@ var scores = {
   "✖": 1,
   "DRAW": 0,
 };
-minimaxAlgo(bool isMiximizing, List itemList) {
+minimaxAlgo(bool isMiximizing, List itemList,int alpha,int beta) {
   // frist Check Winniner
   final tempWinner = tempWinnerLogic(itemList);
   if (tempWinner != "NONE") {
@@ -19,9 +19,12 @@ minimaxAlgo(bool isMiximizing, List itemList) {
     for (int i = 0; i < itemList.length; i++) {
       if (itemList[i] == null) {
         itemList[i] = "✖";
-        var score = minimaxAlgo(false, itemList);
+        var score = minimaxAlgo(false, itemList, alpha, beta);
         itemList[i] = null;
         bestScore = max(score, bestScore);
+          //alpha-beta puring
+        alpha = max(alpha, bestScore);
+        if(beta <= alpha) break;
       }
     }
     return bestScore;
@@ -30,9 +33,12 @@ minimaxAlgo(bool isMiximizing, List itemList) {
     for (int i = 0; i < itemList.length; i++) {
       if (itemList[i] == null) {
         itemList[i] = "O";
-        var score = minimaxAlgo(true, itemList);
+        var score = minimaxAlgo(true, itemList, alpha, beta);
         itemList[i] = null;
         _bestScore = min(score, _bestScore);
+          //alpha-beta puring
+          beta= min(beta, _bestScore);
+          if(beta <= alpha) break;
       }
     }
 
