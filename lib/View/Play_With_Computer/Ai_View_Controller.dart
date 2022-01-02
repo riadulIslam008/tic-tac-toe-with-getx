@@ -56,10 +56,10 @@ class AiViewController extends GetxController {
     clearAll();
     Get.back();
   }
-
-  @override
-  void onInit() {
+  
+   @override
+  void onClose() {
     clearAll();
-    super.onInit();
+    super.dispose();
   }
 }

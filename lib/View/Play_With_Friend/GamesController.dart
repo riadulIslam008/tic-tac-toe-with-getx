@@ -5,11 +5,6 @@ import 'package:tic_tac_toe/Use_Cases/Check_Wining_Index.dart';
 import 'package:tic_tac_toe/Use_Cases/Winnning_Dialog.dart';
 
 class GameController extends GetxController {
-  @override
-  void onInit() {
-    clearAllValue();
-    super.onInit();
-  }
 
   Timer? timerOne;
   RxBool playerController = true.obs;
@@ -71,7 +66,7 @@ class GameController extends GetxController {
     } else {
       return;
     }
-    //if spot == 0 that's mean match should continue play
+    //if spot != 0 that's mean match should continue play and also match result is n't get
     if (spot != 0) {
       playerController.value = !playerController.value;
       playerChange.value = !playerChange.value;
@@ -99,7 +94,7 @@ class GameController extends GetxController {
   }
 
   @override
-  void dispose() {
+  void onClose() {
     timerOne!.cancel();
     clearAllValue();
     super.dispose();
