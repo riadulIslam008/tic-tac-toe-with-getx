@@ -16,8 +16,12 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 
 
-
+<p  align="left">
+ <h6> Play with friend </h6>
  <img src="https://user-images.githubusercontent.com/73518920/132406927-74d61437-8f2d-4600-9cf4-a0ba340284ce.gif" height= "500" width ="300">
+  <h6> Play with Ai </h6>
+ <img src="https://user-images.githubusercontent.com/73518920/149096671-5fc6d323-10d1-46fc-9f72-516cad251632.gif" height= "500" width ="300">
+ </p>
 
 
 
