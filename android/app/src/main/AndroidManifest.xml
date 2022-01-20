@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.tic_tac_toe">
+    <!-- Inernet-permission -->
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="tic_tac_toe"
         android:icon="@mipmap/ic_launcher">
@@ -40,6 +42,6 @@
             <!-- adMove -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6419000263555690~4744590489"/>
+            android:value="ca-app-pub-6280618868682721~7517053471"/>
     </application>
 </manifest>

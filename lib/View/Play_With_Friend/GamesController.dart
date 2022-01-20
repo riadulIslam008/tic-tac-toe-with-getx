@@ -95,7 +95,7 @@ class GameController extends GetxController {
 
   @override
   void onClose() {
-    timerOne!.cancel();
+   if(timerOne != null)  timerOne!.cancel();
     clearAllValue();
     super.dispose();
   }

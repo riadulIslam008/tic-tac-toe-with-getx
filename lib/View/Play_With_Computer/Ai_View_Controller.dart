@@ -1,10 +1,39 @@
 import 'package:get/get.dart';
 import 'package:tic_tac_toe/Core/Veriable.dart';
+import 'package:tic_tac_toe/Services/Ad_Provider.dart';
 import 'package:tic_tac_toe/Use_Cases/Ai/Mini_Max_Algo.dart';
 import 'package:tic_tac_toe/Use_Cases/Check_Wining_Index.dart';
 import 'package:tic_tac_toe/Use_Cases/Winnning_Dialog.dart';
 
 class AiViewController extends GetxController {
+  final AdProvider adProvider = AdProvider();
+  RxBool isAipageBanner = false.obs;
+
+  @override
+  void onInit() {
+    loadBannerAd();
+    loadInterstialAd();
+    super.onInit();
+  }
+
+  Future<void> loadBannerAd() async {
+    try {
+      await adProvider.initializeAipageBanner();
+
+      isAipageBanner.value = true;
+    } catch (e) {
+      isAipageBanner.value = false;
+    }
+  }
+
+  Future<void> loadInterstialAd() async {
+    try {
+      await adProvider.initializefullpageInterstialAd();
+    } catch (e) {
+      print(e);
+    }
+  }
+
   clearAll() {
     for (var i = 0; i < itemList.length; i++) {
       itemList[i] = null;
@@ -56,10 +85,12 @@ class AiViewController extends GetxController {
     clearAll();
     Get.back();
   }
-  
-   @override
+
+  @override
   void onClose() {
     clearAll();
+    AdProvider.aiPageBanner.dispose();
+    if (AdProvider.fullPageLoad) AdProvider.fullpageAd!.dispose();
     super.dispose();
   }
 }
