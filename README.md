@@ -1,19 +1,41 @@
-# tic_tac_toe
+# 🎮 Tic Tac Toe - Flutter Game
 
-A simple game
+Tic Tac Toe is a fun and simple mobile game built using Flutter. This project supports two game modes: **Play with Friend** and **Play with Computer**, providing an enjoyable experience with a clean UI and engaging interaction.
 
-## Getting Started
+![Tic Tac Toe Banner](https://raw.githubusercontent.com/riadulIslam008/images/main/tic-tac-toe-banner.jpg)
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
 
-A few resources to get you started if this is your first Flutter project:
+- 🧠 **Play with AI** – Challenge the computer in single-player mode.
+- 👥 **Play with Friend** – Play locally with another user.
+- 💡 **Smart Reset** – Reset game state seamlessly between rounds.
+- ⚡️ **Quick Access** – Use device quick actions to start a match instantly.
+- 📈 **Ad Integration** – Monetized using Google Mobile Ads.
+- 🎯 **Minimal UI** – Clean and responsive design.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## 📱 Screenshots
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Gameplay 1 | Gameplay 2 | Result Page |
+|-----------|------------|-------------|
+| ![screen1](https://raw.githubusercontent.com/riadulIslam008/images/main/ticTacToe1.webp) | ![screen2](https://raw.githubusercontent.com/riadulIslam008/images/main/ticTacToe2.webp) | ![screen3](https://raw.githubusercontent.com/riadulIslam008/images/main/ticTacToe3.webp) |
+
+## 🛠️ Technologies & Packages
+
+| Package | Description |
+|--------|-------------|
+| [`get`](https://pub.dev/packages/get) | Lightweight and powerful state management & navigation |
+| [`google_mobile_ads`](https://pub.dev/packages/google_mobile_ads) | Google AdMob ad integration |
+| [`quick_actions`](https://pub.dev/packages/quick_actions) | Home screen shortcut launcher |
+| Flutter SDK | Developed using Flutter 3.x+
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/riadulIslam008/tic-tac-toe.git
+cd tic-tac-toe
+flutter pub get
+flutter run
+
 
 
 <p  align="left">
