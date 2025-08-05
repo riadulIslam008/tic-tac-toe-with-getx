@@ -16,9 +16,9 @@ Tic Tac Toe is a fun and simple mobile game built using Flutter. This project su
 ## 📱 Screenshots
 
 <p align="center">
- <img src="https://raw.githubusercontent.com/riadulIslam008/images/main/ticTacToe1.webp" height="300"> 
- <img src="https://raw.githubusercontent.com/riadulIslam008/images/main/ticTacToe2.webp" height="300"> 
- <img src="https://raw.githubusercontent.com/riadulIslam008/images/main/ticTacToe3.webp" height="300"> 
+ <img src="https://raw.githubusercontent.com/riadulIslam008/images/refs/heads/main/Tic%20Tac%20Toe/image1.webp" height="300"> 
+ <img src="https://raw.githubusercontent.com/riadulIslam008/images/refs/heads/main/Tic%20Tac%20Toe/image2.webp" height="300"> 
+ <img src="https://raw.githubusercontent.com/riadulIslam008/images/refs/heads/main/Tic%20Tac%20Toe/image3.webp" height="300"> 
 </p> 
 
 ## 🛠️ Technologies & Packages
